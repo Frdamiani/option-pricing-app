@@ -32,7 +32,7 @@ def update_pricing():
         price = black_scholes_price(S, K, T, r, sigma, option_type_selected)
         result_label.config(text=f"Option price: {price:.2f} €")
 
-        # Plotting
+      
         ax.clear()
         S_values = [s for s in range(int(S * 0.5), int(S * 1.5))]
         option_prices = [black_scholes_price(s, K, T, r, sigma, option_type_selected) for s in S_values]
@@ -47,11 +47,9 @@ def update_pricing():
     except Exception as e:
         result_label.config(text="Error: please check your inputs.")
 
-# GUI setup
 root = tk.Tk()
 root.title("European Option Pricing - Black-Scholes Model")
 
-# Input fields
 params = [
     ("Underlying price (S)", "100"),
     ("Strike price (K)", "100"),
@@ -71,24 +69,19 @@ for label_text, default_val in params:
 
 entry_S, entry_K, entry_T, entry_r, entry_sigma = entries
 
-# Option type selection
 option_type = tk.StringVar(value="call")
 type_frame = tk.Frame(root)
 type_frame.pack()
 ttk.Radiobutton(type_frame, text="Call", variable=option_type, value="call").pack(side=tk.LEFT)
 ttk.Radiobutton(type_frame, text="Put", variable=option_type, value="put").pack(side=tk.LEFT)
 
-# Compute button
 tk.Button(root, text="Calculate", command=update_pricing).pack(pady=5)
 
-# Result display
 result_label = tk.Label(root, text="Option price: ")
 result_label.pack()
 
-# Matplotlib graph area
 fig, ax = plt.subplots(figsize=(5, 3))
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.get_tk_widget().pack()
 
-# Start GUI loop
 root.mainloop()
