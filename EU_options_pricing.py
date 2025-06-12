@@ -36,16 +36,16 @@ def update_pricing():
         canvas.draw()
 
     except Exception as e:
-        result_label.config(text="Error: please check your inputs.")
+        result_label.config(text="Error")
 
 root = tk.Tk()
 root.title("European Option Pricing - Black-Scholes Model")
 params = [
-    ("Underlying price (S)", "100"),
-    ("Strike price (K)", "100"),
-    ("Time to maturity (T, in years)", "1"),
-    ("Risk-free rate (r)", "0.05"),
-    ("Volatility (σ)", "0.2")
+    ("Underlying price (S)"),
+    ("Strike price (K)"),
+    ("Time to maturity (T, in years)"),
+    ("Risk-free rate (r)"),
+    ("Volatility (σ)")
 ]
 entries = []
 for label_text, default_val in params:
