@@ -50,11 +50,11 @@ root.title("European Option Pricing with Black-Scholes equations")
 
 
 params = [
-    ("Underlying price (S)", "100"),
-    ("Strike price (K)", "100"),
-    ("Time to maturity (T, in years)", "1"),
+    ("Underlying price(S)", "100"),
+    ("Strike(K)", "100"),
+    ("Maturity (T, in years)", "1"),
     ("Risk-free rate (r)", "0.05"),
-    ("Volatility (σ)", "0.2")
+    ("Vol (σ)", "0.2")
 ]
 
 entries = []
