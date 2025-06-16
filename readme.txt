@@ -1,5 +1,5 @@
-## Requirements
+Requirements
 
-- Python 3
-- matplotlib
-- scipy
+-Python 3
+-matplotlib
+-scipy
